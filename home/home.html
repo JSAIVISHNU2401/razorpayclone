@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header Hover Effect</title>
+    <link rel="stylesheet" href="/home/assets/css/home.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .hover-effect {
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <header class="fixed top-0 left-0 w-full bg-white p-4 shadow-lg z-50">
+      <nav class="flex justify-between items-center">
+        <div class="logo">
+          <img src="/images/mitsubushii.png" alt="Logo" class="h-10" />
+        </div>
+        <ul class="flex space-x-4 md:space-x-8">
+          <li
+            class="hover-effect px-3 py-2 hover:text-red-600 text-gray-800 cursor-pointer"
+          >
+            About
+          </li>
+          <li
+            class="hover-effect px-3 py-2 hover:text-red-600 text-gray-800 cursor-pointer"
+          >
+            Our Stories
+          </li>
+          <li
+            class="hover-effect px-3 py-2 hover:text-red-600 text-gray-800 cursor-pointer"
+          >
+            Products & Solutions
+          </li>
+          <li
+            class="hover-effect px-3 py-2 hover:text-red-600 text-gray-800 cursor-pointer"
+          >
+            Sustainability
+          </li>
+          <li
+            class="hover-effect px-3 py-2 hover:text-red-600 text-gray-800 cursor-pointer"
+          >
+            Investors
+          </li>
+          <li
+            class="hover-effect px-3 py-2 hover:text-red-600 text-gray-800 cursor-pointer"
+          >
+            Careers
+          </li>
+          <li
+            class="hover-effect px-3 py-2 hover:text-red-600 text-gray-800 cursor-pointer"
+          >
+            News
+          </li>
+          <li
+            class="hover-effect px-3 py-2 hover:text-red-600 text-gray-800 cursor-pointer"
+          >
+            Contact
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="carousel max-w-7xl mx-auto my-6 mt-[7.5rem] relative">
+      <div class="carousel-inner flex transition-transform duration-500">
+        <!-- Slide 1 -->
+        <div class="carousel-item min-w-full">
+          <img
+            src="https://www.shutterstock.com/image-photo/las-vegas-nv-1122024-mitsubishi-260nw-2413226883.jpg"
+            alt="Slide 1"
+            class="w-full h-96 object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center pt-[20px]"
+          ></div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item min-w-full">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz8yJvifSnhRdSOBJ9usiYUlVEJkWBjk7lqg&s"
+            alt="Slide 2"
+            class="w-full h-96 object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center"
+          >
+            <div class="text-center">
+              <h2 class="text-white text-3xl font-bold">
+                Innovation at Its Best
+              </h2>
+              <p class="text-white mt-4">
+                Pioneering advancements in technology.
+              </p>
+              <button class="mt-6 px-4 py-2 bg-white text-black font-bold">
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Previous and Next Buttons -->
+      <button
+        id="prevBtn"
+        class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-4 text-white"
+      >
+        &#10094;
+      </button>
+      <button
+        id="nextBtn"
+        class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 p-4 text-white"
+      >
+        &#10095;
+      </button>
+    </div>
+
+    <script>
+      const carouselInner = document.querySelector(".carousel-inner");
+      const items = document.querySelectorAll(".carousel-item");
+      let currentIndex = 0;
+
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % items.length;
+        carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+      });
+
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+      });
+    </script>
+
+    <section class="max-w-7xl mx-auto py-12 px-6">
+      <div class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-gray-800">Explore Our Company</h1>
+        <p class="text-gray-600 mt-4">
+          Learn more about our corporate data, history, and locations worldwide.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Corporate Data Column -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+            Corporate Data
+          </h2>
+          <p class="text-gray-600 mb-6">
+            Mitsubishi Electric is a global leader in providing high-quality
+            products and solutions in industrial automation, energy systems, and
+            consumer electronics.
+          </p>
+          <a href="#" class="text-blue-500 hover:text-blue-700 font-semibold"
+            >Learn more</a
+          >
+        </div>
+
+        <!-- History Column -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">History</h2>
+          <p class="text-gray-600 mb-6">
+            Founded in 1921, Mitsubishi Electric has a long legacy of
+            innovation, contributing to significant advancements in various
+            industries including automotive and electronics.
+          </p>
+          <a href="#" class="text-blue-500 hover:text-blue-700 font-semibold"
+            >Learn more</a
+          >
+        </div>
+
+        <!-- Locations Column -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Locations</h2>
+          <p class="text-gray-600 mb-6">
+            With offices and manufacturing facilities across the globe,
+            Mitsubishi Electric serves customers in over 100 countries with
+            state-of-the-art technologies.
+          </p>
+          <a href="#" class="text-blue-500 hover:text-blue-700 font-semibold"
+            >Learn more</a
+          >
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

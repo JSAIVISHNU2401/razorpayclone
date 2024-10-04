@@ -1,0 +1,38 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+  margin: 0;
+}
+
+.gs18-Header {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+}
+
+.global-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.global-nav ul li {
+  margin-right: 20px;
+}
+
+.global-nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.product-list {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.gs18-footer {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 20px 0;
+}
